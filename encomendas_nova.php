@@ -163,17 +163,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+    <link rel="stylesheet" href="assets/menu.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova encomenda - AutoLux</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: none;
             font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
+            background: #f3f5f8;
             color: #222;
-            background: #f5f6f8;
+        }
+
+        .conteudo-pagina {
+            width: min(1100px, 92%);
+            margin: 30px auto;
         }
 
         h1, h2 {
@@ -256,7 +267,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <h1>AutoLux — Nova encomenda a fornecedor</h1>
+    <?php include __DIR__ . '/includes/menu.php'; ?>
+    <main class="conteudo-pagina">
+    <h1>Nova encomenda a fornecedor</h1>
 
     <p>
         <a href="fornecedores.php">Consultar fornecedores</a> |
@@ -383,5 +396,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     </script>
+    </main>
 </body>
 </html>

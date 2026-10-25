@@ -205,18 +205,29 @@ function escapar($valor) {
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="stylesheet" href="assets/menu.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoLux - Nova Venda</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: none;
             font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-            background: #f4f6f8;
+            background: #f3f5f8;
             color: #222;
+        }
+
+        .conteudo-pagina {
+            width: min(1100px, 92%);
+            margin: 30px auto;
         }
 
         h1 { color: #183153; }
@@ -275,9 +286,12 @@ function escapar($valor) {
             color: #14532d;
         }
     </style>
+    <link rel="stylesheet" href="assets/menu.css">
 </head>
 <body>
-    <h1>AutoLux — Registar Venda</h1>
+    <?php include __DIR__ . '/includes/menu.php'; ?>
+    <main class="conteudo-pagina">
+    <h1>Registar Venda</h1>
     <p>Seleciona o cliente e as peças que pretende comprar.</p>
 
     <?php if ($erro !== ''): ?>
@@ -363,7 +377,6 @@ function escapar($valor) {
             <button type="submit">Registar venda</button>
         </section>
     </form>
-
-    <p><a href="catalogo.php">Voltar ao catálogo</a></p>
+    </main>
 </body>
 </html>

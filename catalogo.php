@@ -61,14 +61,26 @@ function escapar($valor) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoLux - Catálogo de Peças</title>
     <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: none;
             font-family: Arial, sans-serif;
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-            background: #f4f6f8;
+            background: #f3f5f8;
             color: #222;
         }
+
+        .conteudo-pagina {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
 
         h1 {
             color: #183153;
@@ -122,9 +134,12 @@ function escapar($valor) {
             color: #176b42;
         }
     </style>
+    <link rel="stylesheet" href="assets/menu.css">
 </head>
 <body>
-    <h1>AutoLux — Catálogo de Peças</h1>
+    <?php include __DIR__ . '/includes/menu.php'; ?>
+    <main class="conteudo-pagina">
+    <h1>Catálogo de Peças</h1>
     <p>Consulta as peças disponíveis e utiliza os filtros para encontrar o que procuras.</p>
 
     <form method="GET" action="catalogo.php">
@@ -194,5 +209,6 @@ function escapar($valor) {
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
+    </main>
 </body>
 </html>

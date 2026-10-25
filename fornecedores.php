@@ -42,17 +42,28 @@ function escapar($valor): string
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="stylesheet" href="assets/menu.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AutoLux - Fornecedores</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: none;
             font-family: Arial, sans-serif;
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 16px;
-            background: #f5f6f8;
+            background: #f3f5f8;
             color: #222;
+        }
+
+        .conteudo-pagina {
+            width: min(1100px, 92%);
+            margin: 30px auto;
         }
         h1 { color: #17365d; }
         .cartao {
@@ -75,7 +86,9 @@ function escapar($valor): string
     </style>
 </head>
 <body>
-    <h1>AutoLux — Fornecedores</h1>
+    <?php include __DIR__ . '/includes/menu.php'; ?>
+    <main class="conteudo-pagina">
+    <h1>Fornecedores</h1>
     <p>Lista de fornecedores obtida através da API Node.js.</p>
 
     <div class="cartao">
@@ -106,5 +119,6 @@ function escapar($valor): string
             </table>
         <?php endif; ?>
     </div>
+    </main>
 </body>
 </html>
