@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS pecas (
     referencia VARCHAR(50) NOT NULL UNIQUE,
     nome VARCHAR(150) NOT NULL,
     marca VARCHAR(80) NOT NULL,
+    fornecedor_id INT NULL,
     tipo VARCHAR(80) NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
     stock INT NOT NULL DEFAULT 0
